@@ -3,6 +3,9 @@ package helper
 import (
 	"fmt"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 // #1 INTRO
@@ -49,4 +52,16 @@ func Test5SayHello2(t *testing.T) {
 	}
 
 	fmt.Println("Test5SayHello2 DONE")
+}
+
+func TestAsert1SayHello2(t *testing.T) {
+	result := SayHello2("Danish")
+	assert.Equal(t, "Hello Danish", result, "TEST ASSERT.EQUALDONE") // ASERT jika gagal lanjut memanggil Fail()
+	fmt.Println("===ASSERT.EQUAL SELESAI===")                        // tetap dieksekusi
+}
+
+func TestAsert2SayHello2(t *testing.T) {
+	result := SayHello2("Danish")
+	require.Equal(t, "Hello Danish", result, "TEST ASSERT.EQUALDONE") // REQUIRE jika gagal lanjut memanggil FailNow()
+	fmt.Println("===REQUIRE.EQUAL SELESAI===")                        // tidak dieksekusi
 }
