@@ -77,3 +77,12 @@ func TestSkipSayHello2(t *testing.T) {
 	result := SayHello2("Danish") // tidak dieksekusi karena skip
 	require.Equal(t, "Hello Danish", result)
 }
+
+// testing.M as Before - After test
+func TestMain(m *testing.M) {
+	fmt.Println("===Mulai Test===")
+
+	m.Run()
+
+	fmt.Println("===Selesai Test===")
+}

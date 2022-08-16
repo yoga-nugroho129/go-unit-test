@@ -26,13 +26,16 @@ Menggagalkan unit test:
 
 Assertion: test tanpa if-else dengan module assert `github.com/stretchr/testify`
 1. Install module `go get github.com/stretchr/testify`
-2. Function test `assert.Equal(t, 123, 123, "they should be equal")` jika gagal, assert akan memanggil `Fail()`
-3. Function test `require.Equal(t, 123, 123, "they should be equal")` jika gagal, require akan memanggil `FailNow()`
+2. Function test `assert.Equal(t, 123, 123, "they should be equal")` jika gagal `assert` akan memanggil `Fail()`
+3. Function test `require.Equal(t, 123, 123, "they should be equal")` jika gagal `require` akan memanggil `FailNow()`
 
 Skip Test:
 1. Untuk membatalkan bisa menggunakan function Skip()
 2. `if blabla!=bla { t.Skip("Cannot run test on bla...") }`
 
+testing.M as Before - After test
+1. membuat sebuah function bernama `TestMain(m *testing.M)`
+2. otomatis Go-Lang akan mengeksekusi function setiap akan menjalankan unit test di sebuah package
+3. command `go test -v` pada folder package
 
-
-UNIT TEST PZN COURSE
+UNIT TEST MODULE -- PZN COURSE
