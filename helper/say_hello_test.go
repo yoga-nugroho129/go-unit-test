@@ -78,11 +78,23 @@ func TestSkipSayHello2(t *testing.T) {
 	require.Equal(t, "Hello Danish", result)
 }
 
-// testing.M as Before - After test
+// #5 testing.M as BEFORE - AFTER TEST
 func TestMain(m *testing.M) {
 	fmt.Println("===Mulai Test===")
 
 	m.Run()
 
 	fmt.Println("===Selesai Test===")
+}
+
+// #6 SUBTEST
+func TestSubtest(t *testing.T) {
+	t.Run("Danish", func(t *testing.T) {
+		result := SayHello("Danish")
+		assert.Equal(t, "Hello Danish", result)
+	})
+	t.Run("Cici", func(t *testing.T) {
+		result := SayHello("Cici")
+		assert.Equal(t, "Hello Cici", result)
+	})
 }
