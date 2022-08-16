@@ -5,7 +5,7 @@ Aturan file test:
 2. misal kita membuat file `hello_world.go`, untuk unit testnya nama filenya `hello_world_test.go`
 
 Aturan function Test:
-1. Misal untuk test funtion SayHello maka, naming Prefix Test<blabla>
+1. Misal untuk test funtion SayHello maka, naming Prefix Test....
 2. Harus memiliki parameter `(t *testing.T)` & tidak mengembalikan return value
     contoh `TestSayHello(t *testing.T)`
 
@@ -26,6 +26,13 @@ Menggagalkan unit test:
 
 Assertion: test tanpa if-else dengan module assert `github.com/stretchr/testify`
 1. Install module `go get github.com/stretchr/testify`
-2. Function test `assert.Equal(t, 123, 123, "they should be equal")`
+2. Function test `assert.Equal(t, 123, 123, "they should be equal")` jika gagal, assert akan memanggil `Fail()`
+3. Function test `require.Equal(t, 123, 123, "they should be equal")` jika gagal, require akan memanggil `FailNow()`
+
+Skip Test:
+1. Untuk membatalkan bisa menggunakan function Skip()
+2. `if blabla!=bla { t.Skip("Cannot run test on bla...") }`
+
+
 
 UNIT TEST PZN COURSE
