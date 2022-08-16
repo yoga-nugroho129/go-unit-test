@@ -38,10 +38,15 @@ Commad run test:
 - otomatis Go-Lang akan mengeksekusi function setiap akan menjalankan unit test di sebuah package
 - command `go test -v` pada folder package
 
-## Subtest
+## Sub test
 - Pembuatan function unit test di dalam function unit test
 - bisa menggunakan function `t.Run()`
 - Untuk menjalankan salah satu sub test, gunakan `go test -run TestNamaFunction/NamaSubTest`
 - Untuk semua sub test, gunakan perintah `go test -run/NamaSubTest`
+
+## Table test
+- membuat data slice berisi parameter dan ekspektasi hasil dari unit test
+- selanjutnya slice tersebut diiterasi menggunakan sub test
+- sehingga untuk banyak test case cukup membuat 1 function test saja
 
 UNIT TEST MODULE -- PZN COURSE
