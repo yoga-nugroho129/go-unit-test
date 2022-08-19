@@ -158,3 +158,36 @@ func BenchmarkSub(b *testing.B) {
 		}
 	})
 }
+
+// #11 TABLE BENCHMARK
+func BenchmarkTableSayHello(b *testing.B) {
+	benchmarks := []struct {
+		name    string
+		request string
+	}{
+		{
+			name:    "HelloDanish",
+			request: "Danish",
+		},
+		{
+			name:    "HelloAlfaridzi",
+			request: "Alfaridzi",
+		},
+		{
+			name:    "HelloCici",
+			request: "Cici",
+		},
+		{
+			name:    "HelloYoga",
+			request: "Yoga",
+		},
+	}
+
+	for _, benchmark := range benchmarks {
+		b.Run(benchmark.name, func(b *testing.B) {
+			for i := 0; i < b.N; i++ {
+				SayHello(benchmark.request)
+			}
+		})
+	}
+}

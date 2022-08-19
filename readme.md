@@ -65,4 +65,7 @@ Commad run test:
 - seperti testing.T, di testing.B juga bisa membuat sub benchmark menggunakan function Run()
 - command `go test -v -bench=BenchmarkNama/NamaSub` untuk menjalankan salah satu sub benchmark saja
 
+## Table Benchmark
+- Sama seperti table test
+
 > UNIT TEST MODULE -- PZN COURSE
