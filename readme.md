@@ -24,7 +24,7 @@ Commad run test:
   > `Error()` function untuk melakukan logging(print) error, yang selanjutnya memanggil function `Fail()`
   > `t.Fatal()` function untuk melakukan logging(print) error, yang selanjutnya memanggil function `FailNow()`
 
-## Assertion: test tanpa if-else dengan module assert `github.com/stretchr/testify`
+## Assertion: test tanpa if-else dengan module assert
 - Install module `go get github.com/stretchr/testify`
 - Function test `assert.Equal(t, 123, 123, "they should be equal")` jika gagal `assert` akan memanggil `Fail()`
 - Function test `require.Equal(t, 123, 123, "they should be equal")` jika gagal `require` akan memanggil `FailNow()`
@@ -49,4 +49,16 @@ Commad run test:
 - selanjutnya slice tersebut diiterasi menggunakan sub test
 - sehingga untuk banyak test case cukup membuat 1 function test saja
 
-UNIT TEST MODULE -- PZN COURSE
+## Benchmark
+- mekanisme menghitung kecepatan performa kode
+- golang akan mengeksekusi sejumlah perulangan yang ditentukan secara otomatis, lalu mendeteksi berapa lama proses tersebut berjalan, dan disimpulkan performa benchmark dalam satuan waktu
+- nama function nya, harus diawali dengan Benchmark, misal BenchmarkHelloWorld
+- memiliki parameter (b *testing.B)
+- nama file benchmark, sama seperti unit test, sehingga bisa disimpan dengan function test
+
+- command `go test -v -bench=.` untuk menjalankan seluruh benchmark di module
+- command `go test -v -run=TestTidakAda -bench=.` untuk menjalankan benchmark tanpa unit test
+- command `go test -v -run=TestTidakAda -bench=BenchmarkTest` untuk menjalankan benchmark tertentu
+- command `go test -v -bench=. ./...` untuk menjalankan benchmark di root module dan semua module dijalankan
+
+> UNIT TEST MODULE -- PZN COURSE

@@ -130,3 +130,16 @@ func TestTableSayHello(t *testing.T) {
 		})
 	}
 }
+
+// #9 Benchmark
+func BenchmarkSayHelloDanish(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SayHello("Danish")
+	}
+}
+
+func BenchmarkSayHelloCiciFinansia(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		SayHello("Cici Finansia")
+	}
+}
