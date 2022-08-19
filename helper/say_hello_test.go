@@ -131,7 +131,7 @@ func TestTableSayHello(t *testing.T) {
 	}
 }
 
-// #9 Benchmark
+// #9 BENCHMARK
 func BenchmarkSayHelloDanish(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SayHello("Danish")
@@ -142,4 +142,19 @@ func BenchmarkSayHelloCiciFinansia(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		SayHello("Cici Finansia")
 	}
+}
+
+// #10 SUB BENCHMARK
+func BenchmarkSub(b *testing.B) {
+	b.Run("Danish", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			SayHello("Danish")
+		}
+	})
+
+	b.Run("DanishFull", func(b *testing.B) {
+		for i := 0; i < b.N; i++ {
+			SayHello("M. Danish Alfaridzi")
+		}
+	})
 }

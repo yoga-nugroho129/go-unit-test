@@ -61,4 +61,8 @@ Commad run test:
 - command `go test -v -run=TestTidakAda -bench=BenchmarkTest` untuk menjalankan benchmark tertentu
 - command `go test -v -bench=. ./...` untuk menjalankan benchmark di root module dan semua module dijalankan
 
+## Sub Benchmark
+- seperti testing.T, di testing.B juga bisa membuat sub benchmark menggunakan function Run()
+- command `go test -v -bench=BenchmarkNama/NamaSub` untuk menjalankan salah satu sub benchmark saja
+
 > UNIT TEST MODULE -- PZN COURSE
